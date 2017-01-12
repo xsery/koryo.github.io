@@ -787,5 +787,63 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="919568655155249" title="Boss" />
+        <event-block sid="288379396500890">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="670605917981993" type="System">
+                    <param id="0" name="Interval (seconds)">3.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="592922189670727" type="boss">
+                    <param id="0" name="Object">tiroinimigo</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="788377056117472">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="172655091863042" type="pes">
+                    <param id="0" name="Object">boss</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="881750385689246" type="inimigo" />
+                <action id="0" name="Spawn another object" sid="584828861343804" type="inimigo">
+                    <param id="0" name="Object">explosao</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="655282941756006" type="explosao" />
+            </actions>
+        </event-block>
+        <event-block sid="590934287173792">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="457670933128267" type="boss">
+                    <param id="0" name="Object">explosao</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="267180753250000" type="boss">
+                    <param id="0" name="Instance variable">HPBOSSS</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="976355628752629" type="tiroinimigo">
+                    <param id="0" name="Object">explosao</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="562602850493700" type="tiroinimigo" />
+            </actions>
+        </event-block>
+        <event-block sid="932057380141775">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="931073857550755">
+            <conditions />
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>

@@ -13,9 +13,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="1">1-fase</layout>
         <layout order="2">2-fase</layout>
         <layout order="3">3-fase</layout>
-        <layout order="4">final-stage</layout>
+        <layout active="1" order="4">final-stage</layout>
         <layout order="5">tela-inicial</layout>
-        <layout active="1" order="8">final-jogo</layout>
+        <layout order="8">final-jogo</layout>
         <layout order="10">game-over</layout>
         <event-sheet order="0">1-fase</event-sheet>
         <event-sheet order="6">tela-inicial</event-sheet>
@@ -78,5 +78,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/telainicial/" />
         <folder expanded="1" path="animation-folder/gameover/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/boss/" />
+        <folder expanded="1" path="animation-folder/hpboss/" />
     </folders-expanded>
 </c2uistate>

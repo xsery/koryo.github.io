@@ -20,6 +20,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Car" version="1">Car</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
@@ -962,6 +963,39 @@
         </object-type>
         <object-type name="Text" sid="544938967050563">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="boss" sid="219927059017760">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HPBOSSS" sid="309635278728307" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="336650540119564">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="vertical" sid="561831699548575">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="horizontal" sid="915350978862742">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Car" sid="569272771451640">
+                    <behavior id="Car" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="183904976760069" speed="5">
+                    <frame duration="1" hotspotX="0.516" hotspotY="0.508" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hpboss" sid="191249029919349">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="660892926214838" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
