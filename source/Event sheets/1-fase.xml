@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>1-fase</name>
+    <events>
+        <variable constant="0" name="score" sid="302455507187565" static="0" type="number">0</variable>
+        <event-block sid="219136140554109">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="816234999832360" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="301273058335035" type="pes">
+                    <param id="0" name="Pin to">jogador</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="104362310225980" title="Teclas de Movimento do Jogador">
+            <sub-events>
+                <event-block sid="362888855719737">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="641729355278470" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="973701696859535" type="jogador">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="169885412878529" type="jogador">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="657706039183285">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="110140231320109" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="790891552563792" type="jogador">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="569702082692030" type="jogador">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="941225019321324">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="606535060201080" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="634391576969142" type="jogador">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Acelera o jogador</comment>
+                <event-block sid="740823665157536">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="269397243246143" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="334547664088801" type="jogador">
+                            <param id="0" name="Max Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="912195627819668">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="696309136200725" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="886323168305925" type="jogador">
+                            <param id="0" name="Max Speed">350</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="778141872977927">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="228071476032812" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="112497566358603" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="733282388323904">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Key is down" sid="184119175093262" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="629078655997741" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="435411277235813" title="Animações do Jogador">
+            <sub-events>
+                <comment>Evento: Quando o jogador se movimentar, estiver no chão e a variavel correr for igual a 0.&#x0D;&#x0A;Ação: Setar animação de andar</comment>
+                <event-block sid="627799649847894">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="802237968104666" type="jogador" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="318036449919234" type="jogador" />
+                        <condition id="-7" name="Compare instance variable" sid="185869427138975" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="981517523844211" type="jogador">
+                            <param id="0" name="Animation">&quot;andar&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Evento: Quando o jogador se movimentar, estiver no chão e a variavel correr for igual a 1.&#x0D;&#x0A;Ação: Setar animação de correr</comment>
+                <event-block sid="404421582076436">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="754593066785688" type="jogador" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="665857869405643" type="jogador" />
+                        <condition id="-7" name="Compare instance variable" sid="364633763307152" type="jogador">
+                            <param id="0" name="Instance variable">CORRER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="473133881484865" type="jogador">
+                            <param id="0" name="Animation">&quot;correr&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Evento: Quando o jogador parado e no chão.&#x0D;&#x0A;Ação: Setar animação de parar</comment>
+                <event-block sid="743532386250290">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="540841211596633" type="jogador" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="850335881872507" type="jogador" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="217710411145411" type="jogador">
+                            <param id="0" name="Animation">&quot;parar&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Evento: Quando o jogador pular.&#x0D;&#x0A;Ação: Setar animação de pular</comment>
+                <event-block sid="861824781190774">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="539344643730492" type="jogador" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="697183067509063" type="jogador">
+                            <param id="0" name="Animation">&quot;pular&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Evento: Quando o jogador estiver no chão.</comment>
+                <event-block sid="908871493018023">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="204693996436208" type="jogador" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Evento: Quando o jogador estiver se movendo.&#x0D;&#x0A;Ação: Setar animação de andar</comment>
+                        <event-block sid="491994137615067">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="100391925780680" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="239060590439823" type="jogador">
+                                    <param id="0" name="Animation">&quot;andar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Evento: Quando o jogador NÃO estiver se movendo.&#x0D;&#x0A;Ação: Setar animação de parar</comment>
+                        <event-block sid="400181772269124">
+                            <conditions>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="549995487435692" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="839689739418624" type="jogador">
+                                    <param id="0" name="Animation">&quot;parar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="789154908239877" title="Ações do Jogador">
+            <sub-events>
+                <event-block sid="234080278085979">
+                    <conditions>
+                        <condition id="0" name="On click" sid="482563905788573" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="658635039393300" type="jogador">
+                            <param id="0" name="Animation">&quot;parar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="765849793919106" type="jogador">
+                            <param id="0" name="Animation">&quot;atirar&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="117751866471075">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="689522787201074" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="933899543913648" type="tiro">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="511432931962419" type="jogador">
+                                    <param id="0" name="Object">tiro</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="561868934573231" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="764528774407690" type="jogador">
+                                    <param id="0" name="Animation">&quot;parar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="364826656374985">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="470598647646665" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="731903984175901" type="tiro">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="559662426644750" type="jogador">
+                                    <param id="0" name="Object">tiro</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="133700610167475" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="799515277496880" type="jogador">
+                                    <param id="0" name="Animation">&quot;parar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="316775883917368">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="533782193946413" type="Keyboard">
+                            <param id="0" name="Key">75 (K)</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="710778003369944" type="jogador">
+                            <param id="0" name="Animation">&quot;parar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="920720659048884">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="906103208038763" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="935179618089392" type="jogador">
+                                    <param id="0" name="Animation">&quot;atirar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="490138143245367" type="tiro">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="136571421202151" type="System">
+                                    <param id="0" name="Object to create">tiro</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">jogador.X+40</param>
+                                    <param id="3" name="Y">jogador.Y-20</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="231688859825137" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="953965708672854" type="jogador">
+                                    <param id="0" name="Animation">&quot;parar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="986011655168310">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="196031772698097" type="jogador" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="782015245184047" type="jogador">
+                                    <param id="0" name="Animation">&quot;atirar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="217823142339424" type="tiro">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="864719633564619" type="System">
+                                    <param id="0" name="Object to create">tiro</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">jogador.X-40</param>
+                                    <param id="3" name="Y">jogador.Y-20</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="201913259174257" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="471560390722535" type="jogador">
+                                    <param id="0" name="Animation">&quot;parar&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="695155880142237">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="283471850831964" type="tiro" />
+                        <condition id="7" name="Is mirrored" sid="431573527045769" type="jogador" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="419441603367342" type="tiro">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="732054495345319" title="Gerenciando Vida">
+            <sub-events>
+                <event-block sid="213769437379266">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="903810755929088" type="jogador">
+                            <param id="0" name="Object">coracao</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="194820405277746" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="661919029853467" type="coracao" />
+                    </actions>
+                </event-block>
+                <event-block sid="747540928523245">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="607767748415325" type="jogador">
+                            <param id="0" name="Object">espinho</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="515086329825078" type="jogador">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="385599029989188" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="719186656116718">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="201752354929786" type="jogador">
+                            <param id="0" name="Object">tiroinimigo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="314015659496902" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="780436174167002" type="tiroinimigo">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="699198506872631" type="tiroinimigo" />
+                    </actions>
+                </event-block>
+                <event-block sid="849056756646551">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="557817323651346" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="242734731824587" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="204400071566204" type="jogador">
+                            <param id="0" name="Instance variable">POR_VIDA</param>
+                            <param id="1" name="Value">jogador.VIDA*100/200</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="764374017492226" type="barra">
+                            <param id="0" name="Width">(129.333 * jogador.POR_VIDA) / 100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="674236608101029">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="402059122661944" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="492102087816194" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="126359057696635" title="Gerenciando Inimigos">
+            <sub-events>
+                <event-block sid="616348356768302">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="651329896876828" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="910184475069979" type="inimigo2">
+                            <param id="0" name="Object">tiroinimigo</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="801817261559438">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="861742965925153" type="System">
+                            <param id="0" name="Interval (seconds)">5.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="952925450520575" type="inimigo2">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="640691326522778">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="743295596332895" type="tiro">
+                            <param id="0" name="Object">inimigo2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="461017425448525" type="inimigo2" />
+                        <action id="0" name="Spawn another object" sid="606188289537686" type="inimigo2">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="111438736126405" type="explosao" />
+                    </actions>
+                </event-block>
+                <event-block sid="976467946466796">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="828885527666081" type="pes">
+                            <param id="0" name="Object">inimigo2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="612567363566097" type="inimigo2" />
+                        <action id="0" name="Spawn another object" sid="215551205250373" type="inimigo2">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="293491762859591" type="explosao" />
+                    </actions>
+                </event-block>
+                <event-block sid="253511759984780">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="797666239165484" type="inimigo">
+                            <param id="0" name="Instance variable">direcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;direita&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="897107852704562" type="inimigo">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="851668735916725" type="inimigo">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="243528431043986">
+                            <conditions>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="312971597256028" type="inimigo">
+                                    <param id="0" name="Side">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="104031405702462" type="inimigo">
+                                    <param id="0" name="Instance variable">direcao</param>
+                                    <param id="1" name="Value">&quot;esquerda&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="159124576171505">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="122094042175777" type="inimigo">
+                            <param id="0" name="Instance variable">direcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;esquerda&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="417545470310679" type="inimigo">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="107861093784999" type="inimigo">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="695063754241833">
+                            <conditions>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="175461910085805" type="inimigo">
+                                    <param id="0" name="Side">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="449720550079224" type="inimigo">
+                                    <param id="0" name="Instance variable">direcao</param>
+                                    <param id="1" name="Value">&quot;direita&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="103626259694961">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="939241781824316" type="tiro">
+                            <param id="0" name="Object">inimigo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="232798137828833" type="inimigo" />
+                        <action id="0" name="Spawn another object" sid="873823987411382" type="inimigo">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="883400865766198" type="explosao" />
+                    </actions>
+                </event-block>
+                <event-block sid="666786410681753">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="871396303728333" type="pes">
+                            <param id="0" name="Object">inimigo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="900842647328741" type="inimigo" />
+                        <action id="0" name="Spawn another object" sid="758941708620410" type="inimigo">
+                            <param id="0" name="Object">explosao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="342186587925447" type="explosao" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="737632938024188" title="Presentes para Usuário">
+            <sub-events>
+                <event-group description="" sid="504121885243042" title="Ponte Cai">
+                    <sub-events>
+                        <event-block sid="637317691739581">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="395711857875143" type="jogador">
+                                    <param id="0" name="Object">pontecai</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="386073652464492" type="pontecai">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="654281672092413">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="716494098005923" type="jogador">
+                            <param id="0" name="Object">presente</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="710423343098416" type="presente" />
+                        <action id="-10" name="Add to" sid="435375629626319" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="719829265104798" type="score">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="804368953194717" title="Alavanca e Parede Movel">
+            <sub-events>
+                <event-block sid="732500424384441">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="274931524617142" type="jogador">
+                            <param id="0" name="Object">alavanca</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="734287541365963" type="alavanca">
+                            <param id="0" name="Animation">&quot;inicio&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="132379486322937" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="254452786169122" type="alavanca">
+                            <param id="0" name="Animation">&quot;fim&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="946660200180322" type="parede">
+                            <param id="0" name="X">1137.818</param>
+                            <param id="1" name="Y">96</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="580586645257737" type="parede2">
+                            <param id="0" name="X">1121</param>
+                            <param id="1" name="Y">369</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="130746446385942">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="259384316233757" type="jogador">
+                            <param id="0" name="Object">alavanca</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="779500292140141" type="alavanca">
+                            <param id="0" name="Animation">&quot;fim&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="770799949364874" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="279492439365454" type="alavanca">
+                            <param id="0" name="Animation">&quot;inicio&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="421916543935505" type="parede">
+                            <param id="0" name="X">1137.818</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="601265644197812" type="parede2">
+                            <param id="0" name="X">835</param>
+                            <param id="1" name="Y">369</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="917367145853622" title="Portal">
+            <sub-events>
+                <event-block sid="195800855233139">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="787463749311808" type="jogador">
+                            <param id="0" name="Object">portal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="913448302354144" type="portal">
+                            <param id="0" name="Animation">&quot;fim&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="574770294771028" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="868745631270814" type="System">
+                            <param id="0" name="Layout">2-fase</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="133767880292120">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="173630811928478" type="jogador">
+                            <param id="0" name="Object">portal2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="748636882421628" type="portal2">
+                            <param id="0" name="Animation">&quot;fim&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="728393275432994" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="736230256543793" type="System">
+                            <param id="0" name="Layout">3-fase</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="655360963116585">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="451856638522304" type="jogador">
+                            <param id="0" name="Object">portal3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="429127984071186" type="portal3">
+                            <param id="0" name="Animation">&quot;fim&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="417503660503479" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="275679226326183" type="System">
+                            <param id="0" name="Layout">final-stage</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="429315930745877" title="Game Over">
+            <sub-events>
+                <event-block sid="788250617032021">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="506443889123774" type="jogador">
+                            <param id="0" name="Object">buraco</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="630925816492305" type="System">
+                            <param id="0" name="Layout">game-over</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="369972687823816">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="778481120094519" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="184861695213079" type="jogador">
+                            <param id="0" name="Instance variable">VIDA</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="210730727390526" type="System">
+                            <param id="0" name="Layout">game-over</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
