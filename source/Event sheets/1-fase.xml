@@ -808,15 +808,7 @@
                     <param id="0" name="Object">boss</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="881750385689246" type="inimigo" />
-                <action id="0" name="Spawn another object" sid="584828861343804" type="inimigo">
-                    <param id="0" name="Object">explosao</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="-9" name="Destroy" sid="655282941756006" type="explosao" />
-            </actions>
+            <actions />
         </event-block>
         <event-block sid="590934287173792">
             <conditions>
@@ -825,10 +817,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-12" name="Subtract from" sid="267180753250000" type="boss">
-                    <param id="0" name="Instance variable">HPBOSSS</param>
-                    <param id="1" name="Value">10</param>
-                </action>
                 <action id="0" name="Spawn another object" sid="976355628752629" type="tiroinimigo">
                     <param id="0" name="Object">explosao</param>
                     <param id="1" name="Layer">0</param>
