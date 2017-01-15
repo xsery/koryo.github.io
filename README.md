@@ -13,7 +13,9 @@ The objective of the game is to defeat all of the enemies in each phase. The mec
 ## ART Concept
 
 ## Sound
-	
+
+ES_Home For Christmas 4 - Magnus Ringblom
+ES_Spirit Of Christmas 5 - Magnus Ringblom
 
 
 ## Play
