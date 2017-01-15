@@ -1028,11 +1028,11 @@
                         <x>21.337272644</x>
                         <y>26.530780792</y>
                         <z>0</z>
-                        <width>129.333053589</width>
-                        <height>8.039398193</height>
+                        <width>128.093444824</width>
+                        <height>7.273741245</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0.571428597</hotspotY>
+                        <hotspotX>-0.003225806</hotspotX>
+                        <hotspotY>0.578947365</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

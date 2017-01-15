@@ -4,6 +4,19 @@
     <name>1-fase</name>
     <events>
         <variable constant="0" name="score" sid="302455507187565" static="0" type="number">0</variable>
+        <event-block sid="401784580360607">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="301785929127500" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="572414951228726" type="Audio">
+                    <param id="0" name="Audio file">ES_Spirit Of Christmas 10 - Magnus Ringblom</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="219136140554109">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="816234999832360" type="System" />
@@ -808,7 +821,15 @@
                     <param id="0" name="Object">boss</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Destroy" sid="881750385689246" type="inimigo" />
+                <action id="0" name="Spawn another object" sid="584828861343804" type="inimigo">
+                    <param id="0" name="Object">explosao</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="655282941756006" type="explosao" />
+            </actions>
         </event-block>
         <event-block sid="590934287173792">
             <conditions>
@@ -817,6 +838,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-12" name="Subtract from" sid="267180753250000" type="boss">
+                    <param id="0" name="Instance variable">HPBOSSS</param>
+                    <param id="1" name="Value">10</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="976355628752629" type="tiroinimigo">
                     <param id="0" name="Object">explosao</param>
                     <param id="1" name="Layer">0</param>
@@ -824,14 +849,6 @@
                 </action>
                 <action id="-9" name="Destroy" sid="562602850493700" type="tiroinimigo" />
             </actions>
-        </event-block>
-        <event-block sid="932057380141775">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="931073857550755">
-            <conditions />
-            <actions />
         </event-block>
     </events>
 </c2eventsheet>

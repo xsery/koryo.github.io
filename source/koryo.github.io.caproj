@@ -25,7 +25,6 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -346,14 +345,14 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="968088718623426" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0.571429" original-source="C:\Users\irlan.gomes\Documents\fonte\uea\Natal\assert\lifebar_bar.png">
+                    <frame duration="1" hotspotX="-0.00322581" hotspotY="0.578947" original-source="C:\Users\irlan.gomes\Documents\fonte\uea\Natal\assert\lifebar_bar.png">
                         <collision-poly>
-                            <point x="0.00638978" y="0.0952381" />
-                            <point x="0.498403" y="0.0952381" />
-                            <point x="0.990415" y="0.142857" />
-                            <point x="0.990415" y="0.857143" />
-                            <point x="0.498403" y="0.904762" />
-                            <point x="0.00638978" y="0.904762" />
+                            <point x="0.00322581" y="0.0526316" />
+                            <point x="0.5" y="0.0526316" />
+                            <point x="0.996774" y="0.105263" />
+                            <point x="0.996774" y="0.894737" />
+                            <point x="0.5" y="0.947369" />
+                            <point x="0.00322581" y="0.947369" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -942,7 +941,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="976142366918753" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\irlan.gomes\Documents\fonte\uea\koryo\assets\tela-inicial.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -950,7 +949,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="677116826120435" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\irlan.gomes\Documents\fonte\uea\koryo\assets\game-over.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -962,11 +961,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Text" sid="544938967050563">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="boss" sid="219927059017760">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="HPBOSSS" sid="309635278728307" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="336650540119564">
                     <behavior id="solid" />
@@ -982,39 +981,25 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="183904976760069" speed="5">
-                    <frame duration="1" hotspotX="0.516" hotspotY="0.508" />
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="183904976760069" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="hpboss" sid="191249029919349">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="hpboss" sid="571089415983198" type="number" />
-            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="660892926214838" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="wall" sid="548403686969162">
+        <object-type name="contornohpboss" sid="582690126011049">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="492959680071482" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="wall2" sid="875788905936033">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="BoundToLayout" sid="945289924027586">
-                    <behavior id="bound" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109521486231013" speed="5">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784674377203966" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -1055,7 +1040,12 @@
         </global-instance>
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="ES_Home For Christmas 4 - Magnus Ringblom.ogg" />
+        <file name="ES_Spirit Of Christmas 10 - Magnus Ringblom.ogg" />
+        <file name="ES_Spirit Of Christmas 5 - Magnus Ringblom.ogg" />
+        <file name="ES_Time To Run - Håkan Eriksson.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

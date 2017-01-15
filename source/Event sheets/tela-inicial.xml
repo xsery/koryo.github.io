@@ -3,6 +3,19 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>tela-inicial</name>
     <events>
+        <event-block sid="624300264483156">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="718967509061707" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="135143269256490" type="Audio">
+                    <param id="0" name="Audio file">ES_Home For Christmas 4 - Magnus Ringblom</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="364143915149085">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="289448890994818" type="Keyboard" />

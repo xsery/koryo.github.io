@@ -10,17 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">1-fase</layout>
-        <layout order="2">2-fase</layout>
-        <layout order="3">3-fase</layout>
-        <layout active="1" order="4">final-stage</layout>
-        <layout order="5">tela-inicial</layout>
-        <layout order="8">final-jogo</layout>
-        <layout order="10">game-over</layout>
-        <event-sheet order="0">1-fase</event-sheet>
-        <event-sheet order="6">tela-inicial</event-sheet>
-        <event-sheet order="7">game-over</event-sheet>
-        <event-sheet order="9">fim-jogo</event-sheet>
+        <layout order="0">tela-inicial</layout>
+        <layout active="1" order="3">final-stage</layout>
+        <event-sheet order="1">1-fase</event-sheet>
+        <event-sheet order="2">tela-inicial</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -30,10 +23,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
@@ -80,7 +73,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/boss/" />
         <folder expanded="1" path="animation-folder/hpboss/" />
-        <folder expanded="1" path="animation-folder/wall/" />
-        <folder expanded="1" path="animation-folder/wall2/" />
+        <folder expanded="1" path="animation-folder/contornohpboss/" />
     </folders-expanded>
 </c2uistate>
