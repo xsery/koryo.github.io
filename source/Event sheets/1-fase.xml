@@ -10,7 +10,7 @@
             </conditions>
             <actions>
                 <action id="0" name="Play" sid="572414951228726" type="Audio">
-                    <param id="0" name="Audio file">ES_Spirit Of Christmas 10 - Magnus Ringblom</param>
+                    <param id="0" name="Audio file">ES_Spirit Of Christmas 5 - Magnus Ringblom</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -451,7 +451,9 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="316688946785508" type="System" />
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -804,7 +806,7 @@
         <event-block sid="288379396500890">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="670605917981993" type="System">
-                    <param id="0" name="Interval (seconds)">3.5</param>
+                    <param id="0" name="Interval (seconds)">3</param>
                 </condition>
             </conditions>
             <actions>
@@ -815,39 +817,80 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="788377056117472">
+        <event-block sid="105517452632817">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="172655091863042" type="pes">
+                <condition id="0" name="On collision with another object" sid="894286889893259" type="tiro">
                     <param id="0" name="Object">boss</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="881750385689246" type="inimigo" />
-                <action id="0" name="Spawn another object" sid="584828861343804" type="inimigo">
-                    <param id="0" name="Object">explosao</param>
+                <action id="-9" name="Destroy" sid="272181652464393" type="boss" />
+                <action id="0" name="Spawn another object" sid="770331562592543" type="boss">
+                    <param id="0" name="Object">boss</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-9" name="Destroy" sid="655282941756006" type="explosao" />
+                <action id="-16" name="Wait" sid="465649369510364" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="871279267106697" type="System">
+                    <param id="0" name="Layout">&quot;tela-inicial&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="594129819758783" type="explosao" />
             </actions>
         </event-block>
-        <event-block sid="590934287173792">
+        <event-block sid="563953906858270">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="457670933128267" type="boss">
-                    <param id="0" name="Object">explosao</param>
+                <condition id="0" name="On collision with another object" sid="278724413120360" type="pes">
+                    <param id="0" name="Object">boss</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-12" name="Subtract from" sid="267180753250000" type="boss">
-                    <param id="0" name="Instance variable">HPBOSSS</param>
+                <action id="-9" name="Destroy" sid="297779121654205" type="boss" />
+                <action id="-16" name="Wait" sid="454706617026360" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="371619242072847" type="System">
+                    <param id="0" name="Layout">&quot;tela-inicial&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="709385355974193">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="674097223456529" type="jogador">
+                    <param id="0" name="Object">tiroinimigo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="669404695604127" type="jogador">
+                    <param id="0" name="Instance variable">VIDA</param>
                     <param id="1" name="Value">10</param>
                 </action>
-                <action id="0" name="Spawn another object" sid="976355628752629" type="tiroinimigo">
+                <action id="0" name="Spawn another object" sid="589916878921212" type="tiroinimigo">
                     <param id="0" name="Object">explosao</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-9" name="Destroy" sid="562602850493700" type="tiroinimigo" />
+                <action id="-9" name="Destroy" sid="528537912771685" type="tiroinimigo" />
+            </actions>
+        </event-block>
+        <event-block sid="725804059887808">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="515901693407406" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="799027691111208" type="jogador">
+                    <param id="0" name="Instance variable">VIDA</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="277351482554399" type="jogador">
+                    <param id="0" name="Instance variable">POR_VIDA</param>
+                    <param id="1" name="Value">jogador.VIDA*100/200</param>
+                </action>
+                <action id="-5" name="Set width" sid="815497804141830" type="barra">
+                    <param id="0" name="Width">(129.333 * jogador.POR_VIDA) / 100</param>
+                </action>
             </actions>
         </event-block>
     </events>
