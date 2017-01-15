@@ -26,5 +26,5 @@ ES_Spirit Of Christmas 5 - Magnus Ringblom
 
 ## Play
 
-[PLAY Koryo](source/)
+[PLAY Koryo](Koryo/)
 
