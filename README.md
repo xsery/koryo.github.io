@@ -3,8 +3,11 @@ Welcome to Koryo game wiki!
 Koryo is platform game inspired classic game Mario Bros.The game's mid-1980s release served to further popularized the side-scrolling subgenre of the already popular platform video game genre of the early 1980s. Koryo is a kitsune that fights against time to rescue yours christmas spirit.
 
 Cursed creators:
+
 * Francisca Augusto - Developer / Game Designer
+
 * Hanna Pinheiro - Designer
+
 * Irlan Costa -Developer / Game Designer
 
 ## Gameplay
@@ -12,12 +15,16 @@ The objective of the game is to defeat all of the enemies in each phase. The mec
 
 ## ART Concept
 
+![Koryo](https://raw.githubusercontent.com/xsery/koryo.github.io/gh-pages/banner.png)
+
 ## Sound
 
 ES_Home For Christmas 4 - Magnus Ringblom
+
 ES_Spirit Of Christmas 5 - Magnus Ringblom
 
 
 ## Play
 
-[PLAY CURSED](cursed/)
+[PLAY Koryo](source/)
+
