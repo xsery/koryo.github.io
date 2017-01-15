@@ -15,12 +15,16 @@ The objective of the game is to defeat all of the enemies in each phase. The mec
 
 ## ART Concept
 
+![Koryo](https://raw.githubusercontent.com/xsery/koryo.github.io/gh-pages/banner.png)
+
 ## Sound
 
 ES_Home For Christmas 4 - Magnus Ringblom
+
 ES_Spirit Of Christmas 5 - Magnus Ringblom
 
 
 ## Play
 
-[PLAY CURSED](cursed/)
+[PLAY Koryo](source/)
+
